@@ -1,0 +1,209 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "knct-ryoshoku-api kondate.json",
+  "description": "公開されるkondate.jsonのスキーマ。schemaVersionは1。archive内の献立JSONと手動ocrコマンドの出力は、このファイルの#/$defs/weekを参照してください。追加フィールドを許容します。",
+  "type": "object",
+  "required": ["schemaVersion", "sourceUrl", "publishedForDate", "current", "upcoming", "weeks"],
+  "properties": {
+    "schemaVersion": { "type": "integer", "const": 1 },
+    "sourceUrl": {
+      "type": "string",
+      "description": "献立PDFの取得元URL。"
+    },
+    "publishedForDate": {
+      "$ref": "#/$defs/date",
+      "description": "currentとupcomingの選択基準にした日本時間の日付。"
+    },
+    "current": {
+      "description": "publishedForDateを含む期間の参照。該当する献立がなければnull。この場合kondate.pdfとkondate.pngも公開しません。",
+      "anyOf": [{ "$ref": "#/$defs/weekReference" }, { "type": "null" }]
+    },
+    "upcoming": {
+      "description": "publishedForDateより後に始まる最も近い期間の参照。未取得ならnull。",
+      "anyOf": [{ "$ref": "#/$defs/weekReference" }, { "type": "null" }]
+    },
+    "weeks": {
+      "type": "array",
+      "maxItems": 32,
+      "items": { "$ref": "#/$defs/week" },
+      "description": "各期間の採用版のみ。startDateが新しい順で最大32件。全修正版はstate.jsonとarchive/で取得できます。"
+    }
+  },
+  "$defs": {
+    "date": {
+      "type": "string",
+      "format": "date",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$",
+      "description": "YYYY-MM-DD形式の暦日。"
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$",
+      "description": "元のPDFバイト列のSHA-256。JSONとPDFの対応を確認できます。"
+    },
+    "weekReference": {
+      "type": "object",
+      "required": ["startDate", "endDate", "sourceSha256", "pdf", "json"],
+      "properties": {
+        "startDate": { "$ref": "#/$defs/date" },
+        "endDate": { "$ref": "#/$defs/date" },
+        "sourceSha256": { "$ref": "#/$defs/sha256" },
+        "pdf": {
+          "type": "string",
+          "description": "公開ルートからのPDF相対パス。移行前のファイル名に含まれる日付が実際の期間と異なる場合も、既存URLを維持します。"
+        },
+        "json": {
+          "type": "string",
+          "description": "公開ルートからの献立JSON相対パス。内容は#/$defs/weekの形式です。"
+        }
+      }
+    },
+    "week": {
+      "type": "object",
+      "description": "PDFから読み取った1〜7日分の献立。startDateからendDateまで連続した全日をdaysに日付順で格納します。日付の連続性やフィールド間の一致は生成側でも検証します。旧保存データは公開時にraw.jsonから再整形し、linesとissuesを補完します。再OCRは行わず、fetchedAt・PDFハッシュ・アーカイブURLを維持します。",
+      "required": ["schemaVersion", "engine", "sourceSha256", "fetchedAt", "startDate", "endDate", "days", "warnings"],
+      "properties": {
+        "schemaVersion": { "type": "integer", "const": 1 },
+        "engine": {
+          "type": "string",
+          "description": "OCRエンジンの識別名。",
+          "examples": ["PP-OCRv6-medium"]
+        },
+        "sourceSha256": { "$ref": "#/$defs/sha256" },
+        "fetchedAt": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\\.[0-9]+)?Z$",
+          "description": "このPDFをOCR処理したUTC時刻。末尾はZ。変更のない再取得や保存済みOCRの再整形では更新しません。"
+        },
+        "startDate": { "$ref": "#/$defs/date" },
+        "endDate": { "$ref": "#/$defs/date" },
+        "days": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 7,
+          "items": { "$ref": "#/$defs/day" }
+        },
+        "warnings": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "日付・食事別に、確認が必要なOCR行数を伝える日本語の集計。機械判定には各食事のissuesを使ってください。"
+        }
+      }
+    },
+    "day": {
+      "type": "object",
+      "required": ["date", "breakfast", "lunch", "dinner"],
+      "properties": {
+        "date": { "$ref": "#/$defs/date" },
+        "breakfast": { "$ref": "#/$defs/meal" },
+        "lunch": { "$ref": "#/$defs/meal" },
+        "dinner": { "$ref": "#/$defs/meal" }
+      }
+    },
+    "meal": {
+      "type": "object",
+      "required": ["text", "rawText", "lines", "issues", "warnings"],
+      "properties": {
+        "text": {
+          "type": "string",
+          "description": "includedがtrueの行を結合し、Unicode NFKC・空白・改行を正規化した表示用テキスト。信頼度0.5未満の行は含めません。料理名の推測・自動修正は行いません。"
+        },
+        "rawText": {
+          "type": "string",
+          "description": "除外行も含め、全linesのrawTextを改行で結合した未整形のOCR文字列。"
+        },
+        "lines": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/ocrLine" },
+          "description": "OCR検出順の全結果。低信頼度でも削除しません。料理単位とは限らず、1要素に改行やA・Bメニューの見出しが入る場合もあります。"
+        },
+        "issues": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/mealIssue" },
+          "description": "機械判定用の警告。信頼度0.85未満の各行に、lines順で1件ずつ付与します。0.85以上の行には付与しません。linesが空ならempty_resultのみを1件格納します。lineIndexは除外前のlinesの0始まりの位置で、confidenceはその要素の値と一致します。"
+        },
+        "warnings": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "issuesと同じ件数・順序の日本語説明。説明内のスコアのみ小数点以下2桁に丸めます。数値フィールドのconfidenceは丸めません。"
+        }
+      },
+      "examples": [
+        {
+          "text": "ごはん\n野菜サラダ",
+          "rawText": "ごはん\n8\n野菜ｻﾗﾀﾞ",
+          "lines": [
+            { "text": "ごはん", "rawText": "ごはん", "confidence": 0.99921, "included": true },
+            { "text": "8", "rawText": "8", "confidence": 0.12, "included": false },
+            { "text": "野菜サラダ", "rawText": "野菜ｻﾗﾀﾞ", "confidence": 0.72, "included": true }
+          ],
+          "issues": [
+            { "code": "low_confidence", "lineIndex": 1, "confidence": 0.12 },
+            { "code": "needs_review", "lineIndex": 2, "confidence": 0.72 }
+          ],
+          "warnings": ["低信頼度のため表示省略 (0.12): 8", "OCR要確認 (0.72): 野菜ｻﾗﾀﾞ"]
+        }
+      ]
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "description": "丸め前のOCRエンジンの信頼度。実際の正解率を保証する数値ではありません。"
+    },
+    "ocrLine": {
+      "type": "object",
+      "required": ["text", "rawText", "confidence", "included"],
+      "properties": {
+        "text": {
+          "type": "string",
+          "description": "rawTextにUnicode NFKC・空白・改行の正規化を適用した文字列。"
+        },
+        "rawText": { "type": "string" },
+        "confidence": { "$ref": "#/$defs/confidence" },
+        "included": {
+          "type": "boolean",
+          "description": "信頼度0.5以上ならtrue。表示用textへの採用を示します。"
+        }
+      },
+      "if": { "properties": { "confidence": { "minimum": 0.5 } } },
+      "then": { "properties": { "included": { "const": true } } },
+      "else": { "properties": { "included": { "const": false } } }
+    },
+    "mealIssue": {
+      "oneOf": [
+        {
+          "type": "object",
+          "description": "信頼度0.5未満。表示用テキストから除外した行。",
+          "required": ["code", "lineIndex", "confidence"],
+          "properties": {
+            "code": { "const": "low_confidence" },
+            "lineIndex": { "type": "integer", "minimum": 0 },
+            "confidence": { "type": "number", "minimum": 0, "exclusiveMaximum": 0.5 }
+          }
+        },
+        {
+          "type": "object",
+          "description": "信頼度0.5以上0.85未満。表示用テキストには採用するが確認が必要な行。",
+          "required": ["code", "lineIndex", "confidence"],
+          "properties": {
+            "code": { "const": "needs_review" },
+            "lineIndex": { "type": "integer", "minimum": 0 },
+            "confidence": { "type": "number", "minimum": 0.5, "exclusiveMaximum": 0.85 }
+          }
+        },
+        {
+          "type": "object",
+          "description": "読み取り結果0件。対象行・スコアがないため両方null。textとrawTextは空文字列、linesは空配列になります。食事提供なしを意味するとは限りません。",
+          "required": ["code", "lineIndex", "confidence"],
+          "properties": {
+            "code": { "const": "empty_result" },
+            "lineIndex": { "type": "null" },
+            "confidence": { "type": "null" }
+          }
+        }
+      ]
+    }
+  }
+}

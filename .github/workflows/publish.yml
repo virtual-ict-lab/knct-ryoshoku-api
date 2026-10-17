@@ -1,0 +1,117 @@
+# SPDX-FileCopyrightText: 2026 mothue
+# SPDX-License-Identifier: AGPL-3.0-only
+
+name: Test and publish menu API
+
+on:
+  push:
+    branches-ignore:
+      - deploy
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    # JST Monday rollover; the second run provides another publication attempt.
+    - cron: "7,37 0 * * 1"
+      timezone: Asia/Tokyo
+    # Fetch early next-week menus and corrections throughout the week.
+    - cron: "17 2,8,14,20 * * *"
+      timezone: Asia/Tokyo
+
+permissions:
+  contents: read
+
+concurrency:
+  group: menu-api-${{ github.event_name == 'pull_request' && github.ref || 'publication' }}
+  cancel-in-progress: false
+
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: astral-sh/setup-uv@v10.3.0
+        with:
+          version: "0.12.23"
+          python-version: "3.13"
+          enable-cache: true
+      - run: uv sync --frozen --dev
+      - run: uv run --frozen pytest -q
+      - run: node --test tests/*.test.mjs
+
+  publish:
+    needs: test
+    if: github.event_name != 'pull_request' && github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v7
+      - uses: astral-sh/setup-uv@v10.3.0
+        with:
+          version: "0.12.23"
+          python-version: "3.13"
+          enable-cache: true
+      - run: uv sync --frozen --no-dev
+      - name: Read paths from config.toml
+        id: config
+        run: |
+          uv run --frozen --no-dev python - <<'PY'
+          import os
+          from ryoshoku_api.config import load_config
+          config = load_config()
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as output:
+              for key in ('data_dir', 'public_dir', 'model_dir'):
+                  print(f'{key}={getattr(config, key)}', file=output)
+          PY
+      - name: Cache OCR models
+        uses: actions/cache@v4
+        with:
+          path: ${{ steps.config.outputs.model_dir }}
+          key: ${{ runner.os }}-ocr-${{ hashFiles('uv.lock', 'config.toml') }}
+      - name: Fetch and transcribe
+        id: update
+        continue-on-error: true
+        run: uv run --frozen --no-dev python -m ryoshoku_api update
+      - name: Generate static PDF, 300 DPI PNG and JSON from saved data
+        run: uv run --frozen --no-dev python -m ryoshoku_api publish
+      - name: Report source failure
+        if: steps.update.outcome != 'success'
+        run: echo '::warning::Source update failed. The API was rebuilt from saved data; inspect the Fetch and transcribe step.'
+      - name: Persist PDF and OCR history
+        env:
+          ARCHIVE_DATA_DIR: ${{ steps.config.outputs.data_dir }}
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- "$ARCHIVE_DATA_DIR"
+          if ! git diff --cached --quiet; then
+            git commit -m 'Update menu PDF and JSON history'
+            git push
+          fi
+      - name: Prepare static files for deploy branch
+        id: site
+        env:
+          STATIC_PUBLIC_DIR: ${{ steps.config.outputs.public_dir }}
+        run: |
+          uv run --frozen --no-dev python - <<'PYTHON'
+          import os
+          from pathlib import Path
+          import shutil
+          source = Path(os.environ['STATIC_PUBLIC_DIR']).resolve(strict=True)
+          target = Path(os.environ['RUNNER_TEMP']) / 'ryoshoku-pages'
+          shutil.copytree(source, target, ignore=shutil.ignore_patterns('.ryoshoku-api', '.github'))
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as output:
+              print(f'path={target}', file=output)
+          PYTHON
+      - name: Update deploy branch with static PDF, PNG and JSON
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: deploy
+          folder: ${{ steps.site.outputs.path }}
+          clean: true
+          commit-message: Publish menu PDF, PNG and JSON

@@ -1,0 +1,17 @@
+# SPDX-FileCopyrightText: 2026 mothue
+# SPDX-License-Identifier: AGPL-3.0-only
+
+# All relative paths are resolved against this project directory.
+data_dir = "data"
+public_dir = "public"
+model_dir = ".models"
+
+pdf_url = "https://www.kagawa-nct.ac.jp/dormitoryE/kondate.pdf"
+model_size = "medium"
+ocr_threads = 2
+ocr_timeout_seconds = 600
+fetch_timeout_seconds = 30
+
+# Local static preview only; updates run explicitly or via GitHub Actions.
+host = "127.0.0.1"
+port = 3333

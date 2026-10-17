@@ -1,0 +1,48 @@
+<!doctype html>
+<!-- SPDX-FileCopyrightText: 2026 mothue -->
+<!-- SPDX-License-Identifier: AGPL-3.0-only -->
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>香川高専 詫間キャンパス 学生寮 週間献立表</title>
+  <meta name="description" content="香川高専詫間キャンパス学生寮の献立表。公式PDFが先に更新されても、今日を含む期間の献立を確認できます。">
+  <meta name="robots" content="index, follow">
+  <script type="module" src="./page.mjs"></script>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>香川高専 詫間キャンパス 学生寮食堂 献立表</h1>
+      <p>公式サイトのPDFを保存し、日本時間の今日を含む期間の献立を案内します。</p>
+    </header>
+
+    <section aria-labelledby="current-heading">
+      <h2 id="current-heading">今日の献立</h2>
+      <p><a href="./kondate.pdf">現在の献立PDF</a> · <a href="./kondate.json">献立JSON API</a></p>
+      <p id="menu-status" role="status">献立一覧を読み込んでいます。</p>
+      <p id="current-menu"></p>
+      <p id="upcoming-menu" hidden></p>
+      <noscript><p>今日の献立を自動で選ぶにはJavaScriptを有効にしてください。<a href="./state.json">保存済みPDFの一覧と対象期間</a>も確認できます。</p></noscript>
+      <p><a href="https://www.kagawa-nct.ac.jp/dormitoryE/kondate.pdf">公式PDFを見る</a>（翌週分に更新されている場合があります）</p>
+    </section>
+
+    <section aria-labelledby="archive-heading">
+      <h2 id="archive-heading">保存済みの献立</h2>
+      <ul id="archive-list"></ul>
+      <p id="latest-menu"></p>
+    </section>
+
+    <section aria-labelledby="about-heading">
+      <h2 id="about-heading">なぜこのページを作ったのか？</h2>
+      <p>公式サイトの週間献立表は、金曜〜土曜など、週の途中で翌週分に更新されることがあります。このページではPDFを保存しておき、週末も今週の献立を確認できるようにしています。</p>
+      <p>PDFに記載された対象期間で選ぶため、翌週分を先に取得しても、今日の献立はその期間が終わるまで切り替わりません。</p>
+    </section>
+
+    <footer>
+      <p>個人用の非公式ページです。取得できていない期間や、更新の遅れがある場合があります。内容は<a href="https://www.kagawa-nct.ac.jp/dormitoryE/kondate.pdf">公式PDF</a>も併せてご確認ください。</p>
+      <p>このページを利用して発生した損害について、運営者は責任を負いません。</p>
+    </footer>
+  </main>
+</body>
+</html>

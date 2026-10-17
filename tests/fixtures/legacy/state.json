@@ -1,0 +1,79 @@
+{
+  "source_url": "https://www.kagawa-nct.ac.jp/dormitoryE/kondate.pdf",
+  "latest_pdf_path": "latest.pdf",
+  "latest_pdf_hash": "72e53f1defc1802b32e0dd56b1ec40a1a538dad6ca98163f7c17873e8d4cadaa",
+  "latest_hash": "72e53f1defc1802b32e0dd56b1ec40a1a538dad6ca98163f7c17873e8d4cadaa",
+  "updated_at": "2026-10-17T20:29:53.409104+09:00",
+  "changed": false,
+  "mode": "auto",
+  "latest_week_start": "2026-10-19",
+  "latest_week_end": "2026-10-25",
+  "menus": [
+    {
+      "seq": 1,
+      "start_date": "2026-06-29",
+      "end_date": "2026-07-05",
+      "path": "archive/2026/0001_2026-06-29_2026-07-05.pdf",
+      "sha256": "25b9d4b0259944bf30b6ac87a30d44a286d1d5804425a7ced6b48c653cee865e",
+      "preferred": true
+    },
+    {
+      "seq": 2,
+      "start_date": "2026-07-06",
+      "end_date": "2026-07-12",
+      "path": "archive/2026/0002_2026-07-06_2026-07-12.pdf",
+      "sha256": "808d9589d401d463d227afd2eb2924f55c5f075d4a3dd47a38a35dd61579144f",
+      "preferred": true
+    },
+    {
+      "seq": 3,
+      "start_date": "2026-07-27",
+      "end_date": "2026-08-02",
+      "path": "archive/2026/0003_2026-07-13_2026-07-19.pdf",
+      "sha256": "01d9be4f11b8f2898072694c92e05ba42f05271144cf7b8c4ce082abf011f224",
+      "preferred": true
+    },
+    {
+      "seq": 4,
+      "start_date": "2026-08-03",
+      "end_date": "2026-08-09",
+      "path": "archive/2026/0004_2026-07-20_2026-07-26.pdf",
+      "sha256": "b4b1f66cfac0815abf6501d5cdc33ad20ee4cb3ad402b8f3fcb2170ae636d632",
+      "preferred": true
+    },
+    {
+      "seq": 5,
+      "start_date": "2026-09-30",
+      "end_date": "2026-10-04",
+      "path": "archive/2026/0005_2026-07-27_2026-08-02.pdf",
+      "sha256": "b5372c7dae1311541b737a20881070936477bea1ca4ef93df71a75257b7f0fe4",
+      "preferred": true
+    },
+    {
+      "seq": 6,
+      "start_date": "2026-10-05",
+      "end_date": "2026-10-11",
+      "path": "archive/2026/0006_2026-08-03_2026-08-09.pdf",
+      "sha256": "0bdb0efd47259f72b105055c41f313bcd48304f4ff063f2a2a555e8bca7c71ad",
+      "preferred": true
+    },
+    {
+      "seq": 7,
+      "start_date": "2026-10-12",
+      "end_date": "2026-10-18",
+      "path": "archive/2026/0007_2026-08-10_2026-08-16.pdf",
+      "sha256": "43c82389f35b194e9df5f319c3a1173b1f92e313bba8d06cce1a187d5d67fa84",
+      "preferred": true
+    },
+    {
+      "seq": 8,
+      "start_date": "2026-10-19",
+      "end_date": "2026-10-25",
+      "path": "archive/2026/0008_2026-08-17_2026-08-23.pdf",
+      "sha256": "72e53f1defc1802b32e0dd56b1ec40a1a538dad6ca98163f7c17873e8d4cadaa",
+      "preferred": true
+    }
+  ],
+  "latest_seq": 8,
+  "latest_archive_path": "archive/2026/0008_2026-08-17_2026-08-23.pdf"
+}
