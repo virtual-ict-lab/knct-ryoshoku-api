@@ -4,6 +4,1046 @@
     {
       "schemaVersion": 1,
       "engine": "PP-OCRv6-medium",
+      "sourceSha256": "cf037e23edaa8cd13724c75373464a10cd8b0a73afb527c5194d88b0e151b14d",
+      "fetchedAt": "2026-10-22T15:54:50.548Z",
+      "startDate": "2026-10-26",
+      "endDate": "2026-11-01",
+      "days": [
+        {
+          "date": "2026-10-26",
+          "breakfast": {
+            "rawText": "[ A ]\nごはん\n[ B ]\nパン\nジャム・マーガリン\n[ 共通料理 ]\nジャーマンかぼちゃ\nチョリソーウインナー\n野菜サラダ\n味噌汁\n牛乳（200ml）",
+            "text": "[ A ]\nごはん\n[ B ]\nパン\nジャム・マーガリン\n[ 共通料理 ]\nジャーマンかぼちゃ\nチョリソーウインナー\n野菜サラダ\n味噌汁\n牛乳(200ml)",
+            "warnings": [],
+            "lines": [
+              {
+                "text": "[ A ]",
+                "rawText": "[ A ]",
+                "confidence": 0.92059,
+                "included": true
+              },
+              {
+                "text": "ごはん",
+                "rawText": "ごはん",
+                "confidence": 0.99947,
+                "included": true
+              },
+              {
+                "text": "[ B ]",
+                "rawText": "[ B ]",
+                "confidence": 0.92998,
+                "included": true
+              },
+              {
+                "text": "パン",
+                "rawText": "パン",
+                "confidence": 0.99712,
+                "included": true
+              },
+              {
+                "text": "ジャム・マーガリン",
+                "rawText": "ジャム・マーガリン",
+                "confidence": 0.99955,
+                "included": true
+              },
+              {
+                "text": "[ 共通料理 ]",
+                "rawText": "[ 共通料理 ]",
+                "confidence": 0.99507,
+                "included": true
+              },
+              {
+                "text": "ジャーマンかぼちゃ",
+                "rawText": "ジャーマンかぼちゃ",
+                "confidence": 0.99833,
+                "included": true
+              },
+              {
+                "text": "チョリソーウインナー",
+                "rawText": "チョリソーウインナー",
+                "confidence": 0.99775,
+                "included": true
+              },
+              {
+                "text": "野菜サラダ",
+                "rawText": "野菜サラダ",
+                "confidence": 0.99982,
+                "included": true
+              },
+              {
+                "text": "味噌汁",
+                "rawText": "味噌汁",
+                "confidence": 0.99458,
+                "included": true
+              },
+              {
+                "text": "牛乳(200ml)",
+                "rawText": "牛乳（200ml）",
+                "confidence": 0.93615,
+                "included": true
+              }
+            ],
+            "issues": []
+          },
+          "lunch": {
+            "rawText": "かきあげうどん\nごはん\nじゃが芋和風マヨサラダ\nパインゼリー",
+            "text": "かきあげうどん\nごはん\nじゃが芋和風マヨサラダ\nパインゼリー",
+            "warnings": [],
+            "lines": [
+              {
+                "text": "かきあげうどん",
+                "rawText": "かきあげうどん",
+                "confidence": 0.99987,
+                "included": true
+              },
+              {
+                "text": "ごはん",
+                "rawText": "ごはん",
+                "confidence": 0.99877,
+                "included": true
+              },
+              {
+                "text": "じゃが芋和風マヨサラダ",
+                "rawText": "じゃが芋和風マヨサラダ",
+                "confidence": 0.99791,
+                "included": true
+              },
+              {
+                "text": "パインゼリー",
+                "rawText": "パインゼリー",
+                "confidence": 0.99964,
+                "included": true
+              }
+            ],
+            "issues": []
+          },
+          "dinner": {
+            "rawText": "[ A ]\n白身魚の野菜あんかけ\n[ B ]\n白身魚の西京焼き\n[ 共通料理 ]\nごはん\nつけあわせ\n茄子のそぼろ煮\nキムチスープ",
+            "text": "[ A ]\n白身魚の野菜あんかけ\n[ B ]\n白身魚の西京焼き\n[ 共通料理 ]\nごはん\nつけあわせ\n茄子のそぼろ煮\nキムチスープ",
+            "warnings": [],
+            "lines": [
+              {
+                "text": "[ A ]",
+                "rawText": "[ A ]",
+                "confidence": 0.92167,
+                "included": true
+              },
+              {
+                "text": "白身魚の野菜あんかけ",
+                "rawText": "白身魚の野菜あんかけ",
+                "confidence": 0.99982,
+                "included": true
+              },
+              {
+                "text": "[ B ]",
+                "rawText": "[ B ]",
+                "confidence": 0.93442,
+                "included": true
+              },
+              {
+                "text": "白身魚の西京焼き",
+                "rawText": "白身魚の西京焼き",
+                "confidence": 0.99989,
+                "included": true
+              },
+              {
+                "text": "[ 共通料理 ]",
+                "rawText": "[ 共通料理 ]",
+                "confidence": 0.99519,
+                "included": true
+              },
+              {
+                "text": "ごはん",
+                "rawText": "ごはん",
+                "confidence": 0.99956,
+                "included": true
+              },
+              {
+                "text": "つけあわせ",
+                "rawText": "つけあわせ",
+                "confidence": 0.99939,
+                "included": true
+              },
+              {
+                "text": "茄子のそぼろ煮",
+                "rawText": "茄子のそぼろ煮",
+                "confidence": 0.99882,
+                "included": true
+              },
+              {
+                "text": "キムチスープ",
+                "rawText": "キムチスープ",
+                "confidence": 0.99964,
+                "included": true
+              }
+            ],
+            "issues": []
+          }
+        },
+        {
+          "date": "2026-10-27",
+          "breakfast": {
+            "rawText": "[ A ]\nごはん\n[ B ]\nパン\nジャム・マーガリン\n[ 共通料理 ]\nニラ玉炒め\nミートボール\n野菜サラダ\n味噌汁\n牛乳（200ml）",
+            "text": "[ A ]\nごはん\n[ B ]\nパン\nジャム・マーガリン\n[ 共通料理 ]\nニラ玉炒め\nミートボール\n野菜サラダ\n味噌汁\n牛乳(200ml)",
+            "warnings": [],
+            "lines": [
+              {
+                "text": "[ A ]",
+                "rawText": "[ A ]",
+                "confidence": 0.91105,
+                "included": true
+              },
+              {
+                "text": "ごはん",
+                "rawText": "ごはん",
+                "confidence": 0.99909,
+                "included": true
+              },
+              {
+                "text": "[ B ]",
+                "rawText": "[ B ]",
+                "confidence": 0.89343,
+                "included": true
+              },
+              {
+                "text": "パン",
+                "rawText": "パン",
+                "confidence": 0.99346,
+                "included": true
+              },
+              {
+                "text": "ジャム・マーガリン",
+                "rawText": "ジャム・マーガリン",
+                "confidence": 0.99965,
+                "included": true
+              },
+              {
+                "text": "[ 共通料理 ]",
+                "rawText": "[ 共通料理 ]",
+                "confidence": 0.96251,
+                "included": true
+              },
+              {
+                "text": "ニラ玉炒め",
+                "rawText": "ニラ玉炒め",
+                "confidence": 0.97483,
+                "included": true
+              },
+              {
+                "text": "ミートボール",
+                "rawText": "ミートボール",
+                "confidence": 0.99962,
+                "included": true
+              },
+              {
+                "text": "野菜サラダ",
+                "rawText": "野菜サラダ",
+                "confidence": 0.99981,
+                "included": true
+              },
+              {
+                "text": "味噌汁",
+                "rawText": "味噌汁",
+                "confidence": 0.98008,
+                "included": true
+              },
+              {
+                "text": "牛乳(200ml)",
+                "rawText": "牛乳（200ml）",
+                "confidence": 0.95161,
+                "included": true
+              }
+            ],
+            "issues": []
+          },
+          "lunch": {
+            "rawText": "タコライス\nハムサラダフライ\n中華風コーンスープ\nかぼちゃプリン",
+            "text": "タコライス\nハムサラダフライ\n中華風コーンスープ\nかぼちゃプリン",
+            "warnings": [],
+            "lines": [
+              {
+                "text": "タコライス",
+                "rawText": "タコライス",
+                "confidence": 0.99902,
+                "included": true
+              },
+              {
+                "text": "ハムサラダフライ",
+                "rawText": "ハムサラダフライ",
+                "confidence": 0.99964,
+                "included": true
+              },
+              {
+                "text": "中華風コーンスープ",
+                "rawText": "中華風コーンスープ",
+                "confidence": 0.99901,
+                "included": true
+              },
+              {
+                "text": "かぼちゃプリン",
+                "rawText": "かぼちゃプリン",
+                "confidence": 0.99943,
+                "included": true
+              }
+            ],
+            "issues": []
+          },
+          "dinner": {
+            "rawText": "雑穀ご飯\nチーズハンバーグ\nつけあわせ\nベーコンポテトソテー\nコンソメスープ",
+            "text": "雑穀ご飯\nチーズハンバーグ\nつけあわせ\nベーコンポテトソテー\nコンソメスープ",
+            "warnings": [],
+            "lines": [
+              {
+                "text": "雑穀ご飯",
+                "rawText": "雑穀ご飯",
+                "confidence": 0.99118,
+                "included": true
+              },
+              {
+                "text": "チーズハンバーグ",
+                "rawText": "チーズハンバーグ",
+                "confidence": 0.99913,
+                "included": true
+              },
+              {
+                "text": "つけあわせ",
+                "rawText": "つけあわせ",
+                "confidence": 0.99879,
+                "included": true
+              },
+              {
+                "text": "ベーコンポテトソテー",
+                "rawText": "ベーコンポテトソテー",
+                "confidence": 0.99864,
+                "included": true
+              },
+              {
+                "text": "コンソメスープ",
+                "rawText": "コンソメスープ",
+                "confidence": 0.99796,
+                "included": true
+              }
+            ],
+            "issues": []
+          }
+        },
+        {
+          "date": "2026-10-28",
+          "breakfast": {
+            "rawText": "[ A ]\nごはん\n[ B ]\nパン\nジャム・マーガリン\n[ 共通料理 ]\nきんぴらごぼう\nあじフライ\n野菜サラダ\n味噌汁\n牛乳（200ml）",
+            "text": "[ A ]\nごはん\n[ B ]\nパン\nジャム・マーガリン\n[ 共通料理 ]\nきんぴらごぼう\nあじフライ\n野菜サラダ\n味噌汁\n牛乳(200ml)",
+            "warnings": [],
+            "lines": [
+              {
+                "text": "[ A ]",
+                "rawText": "[ A ]",
+                "confidence": 0.89678,
+                "included": true
+              },
+              {
+                "text": "ごはん",
+                "rawText": "ごはん",
+                "confidence": 0.999,
+                "included": true
+              },
+              {
+                "text": "[ B ]",
+                "rawText": "[ B ]",
+                "confidence": 0.86774,
+                "included": true
+              },
+              {
+                "text": "パン",
+                "rawText": "パン",
+                "confidence": 0.99687,
+                "included": true
+              },
+              {
+                "text": "ジャム・マーガリン",
+                "rawText": "ジャム・マーガリン",
+                "confidence": 0.9996,
+                "included": true
+              },
+              {
+                "text": "[ 共通料理 ]",
+                "rawText": "[ 共通料理 ]",
+                "confidence": 0.93712,
+                "included": true
+              },
+              {
+                "text": "きんぴらごぼう",
+                "rawText": "きんぴらごぼう",
+                "confidence": 0.99402,
+                "included": true
+              },
+              {
+                "text": "あじフライ",
+                "rawText": "あじフライ",
+                "confidence": 0.99958,
+                "included": true
+              },
+              {
+                "text": "野菜サラダ",
+                "rawText": "野菜サラダ",
+                "confidence": 0.99983,
+                "included": true
+              },
+              {
+                "text": "味噌汁",
+                "rawText": "味噌汁",
+                "confidence": 0.99163,
+                "included": true
+              },
+              {
+                "text": "牛乳(200ml)",
+                "rawText": "牛乳（200ml）",
+                "confidence": 0.92869,
+                "included": true
+              }
+            ],
+            "issues": []
+          },
+          "lunch": {
+            "rawText": "きのこ南蛮そば\n混ぜごはん\n大根の鶏そぼろあん\n柿",
+            "text": "きのこ南蛮そば\n混ぜごはん\n大根の鶏そぼろあん\n柿",
+            "warnings": [],
+            "lines": [
+              {
+                "text": "きのこ南蛮そば",
+                "rawText": "きのこ南蛮そば",
+                "confidence": 0.9991,
+                "included": true
+              },
+              {
+                "text": "混ぜごはん",
+                "rawText": "混ぜごはん",
+                "confidence": 0.99909,
+                "included": true
+              },
+              {
+                "text": "大根の鶏そぼろあん",
+                "rawText": "大根の鶏そぼろあん",
+                "confidence": 0.99914,
+                "included": true
+              },
+              {
+                "text": "柿",
+                "rawText": "柿",
+                "confidence": 0.98463,
+                "included": true
+              }
+            ],
+            "issues": []
+          },
+          "dinner": {
+            "rawText": "カツカレー\nハロウインサラダ\nハロウィーンお菓子\nHALLOWEENS\nお菓子すくい\nイベント",
+            "text": "カツカレー\nハロウインサラダ\nハロウィーンお菓子\nHALLOWEENS\nお菓子すくい\nイベント",
+            "warnings": [],
+            "lines": [
+              {
+                "text": "カツカレー",
+                "rawText": "カツカレー",
+                "confidence": 0.99954,
+                "included": true
+              },
+              {
+                "text": "ハロウインサラダ",
+                "rawText": "ハロウインサラダ",
+                "confidence": 0.99907,
+                "included": true
+              },
+              {
+                "text": "ハロウィーンお菓子",
+                "rawText": "ハロウィーンお菓子",
+                "confidence": 0.99884,
+                "included": true
+              },
+              {
+                "text": "HALLOWEENS",
+                "rawText": "HALLOWEENS",
+                "confidence": 0.91404,
+                "included": true
+              },
+              {
+                "text": "お菓子すくい",
+                "rawText": "お菓子すくい",
+                "confidence": 0.99964,
+                "included": true
+              },
+              {
+                "text": "イベント",
+                "rawText": "イベント",
+                "confidence": 0.99932,
+                "included": true
+              }
+            ],
+            "issues": []
+          }
+        },
+        {
+          "date": "2026-10-29",
+          "breakfast": {
+            "rawText": "[ A ]\nごはん\n[ B ]\nパン\nジャム・マーガリン\n[ 共通料理 ]\nいかと里芋のうま煮\nチキンナゲット\n野菜サラダ\n味噌汁\n牛乳（200ml）",
+            "text": "[ A ]\nごはん\n[ B ]\nパン\nジャム・マーガリン\n[ 共通料理 ]\nいかと里芋のうま煮\nチキンナゲット\n野菜サラダ\n味噌汁\n牛乳(200ml)",
+            "warnings": [],
+            "lines": [
+              {
+                "text": "[ A ]",
+                "rawText": "[ A ]",
+                "confidence": 0.88789,
+                "included": true
+              },
+              {
+                "text": "ごはん",
+                "rawText": "ごはん",
+                "confidence": 0.99947,
+                "included": true
+              },
+              {
+                "text": "[ B ]",
+                "rawText": "[ B ]",
+                "confidence": 0.93508,
+                "included": true
+              },
+              {
+                "text": "パン",
+                "rawText": "パン",
+                "confidence": 0.99712,
+                "included": true
+              },
+              {
+                "text": "ジャム・マーガリン",
+                "rawText": "ジャム・マーガリン",
+                "confidence": 0.99958,
+                "included": true
+              },
+              {
+                "text": "[ 共通料理 ]",
+                "rawText": "[ 共通料理 ]",
+                "confidence": 0.99574,
+                "included": true
+              },
+              {
+                "text": "いかと里芋のうま煮",
+                "rawText": "いかと里芋のうま煮",
+                "confidence": 0.99979,
+                "included": true
+              },
+              {
+                "text": "チキンナゲット",
+                "rawText": "チキンナゲット",
+                "confidence": 0.99694,
+                "included": true
+              },
+              {
+                "text": "野菜サラダ",
+                "rawText": "野菜サラダ",
+                "confidence": 0.99983,
+                "included": true
+              },
+              {
+                "text": "味噌汁",
+                "rawText": "味噌汁",
+                "confidence": 0.99087,
+                "included": true
+              },
+              {
+                "text": "牛乳(200ml)",
+                "rawText": "牛乳（200ml）",
+                "confidence": 0.93725,
+                "included": true
+              }
+            ],
+            "issues": []
+          },
+          "lunch": {
+            "rawText": "鶏しお丼\n野菜の甘酢和え\nけんちん汁",
+            "text": "鶏しお丼\n野菜の甘酢和え\nけんちん汁",
+            "warnings": [],
+            "lines": [
+              {
+                "text": "鶏しお丼",
+                "rawText": "鶏しお丼",
+                "confidence": 0.99936,
+                "included": true
+              },
+              {
+                "text": "野菜の甘酢和え",
+                "rawText": "野菜の甘酢和え",
+                "confidence": 0.99977,
+                "included": true
+              },
+              {
+                "text": "けんちん汁",
+                "rawText": "けんちん汁",
+                "confidence": 0.9991,
+                "included": true
+              }
+            ],
+            "issues": []
+          },
+          "dinner": {
+            "rawText": "ごはん\nえびフライ\nつけあわせ\n切干大根のゴマ和え\nとろろ汁",
+            "text": "ごはん\nえびフライ\nつけあわせ\n切干大根のゴマ和え\nとろろ汁",
+            "warnings": [],
+            "lines": [
+              {
+                "text": "ごはん",
+                "rawText": "ごはん",
+                "confidence": 0.99894,
+                "included": true
+              },
+              {
+                "text": "えびフライ",
+                "rawText": "えびフライ",
+                "confidence": 0.99957,
+                "included": true
+              },
+              {
+                "text": "つけあわせ",
+                "rawText": "つけあわせ",
+                "confidence": 0.99931,
+                "included": true
+              },
+              {
+                "text": "切干大根のゴマ和え",
+                "rawText": "切干大根のゴマ和え",
+                "confidence": 0.99834,
+                "included": true
+              },
+              {
+                "text": "とろろ汁",
+                "rawText": "とろろ汁",
+                "confidence": 0.99938,
+                "included": true
+              }
+            ],
+            "issues": []
+          }
+        },
+        {
+          "date": "2026-10-30",
+          "breakfast": {
+            "rawText": "[ A ]\nごはん\n[ B ]\nパン\nジャム・マーガリン\n[ 共通料理 ]\n炒り豆腐\nミニオムレツ\n野菜サラダ\n味噌汁\n牛乳（200ml）",
+            "text": "[ A ]\nごはん\n[ B ]\nパン\nジャム・マーガリン\n[ 共通料理 ]\n炒り豆腐\nミニオムレツ\n野菜サラダ\n味噌汁\n牛乳(200ml)",
+            "warnings": [],
+            "lines": [
+              {
+                "text": "[ A ]",
+                "rawText": "[ A ]",
+                "confidence": 0.91105,
+                "included": true
+              },
+              {
+                "text": "ごはん",
+                "rawText": "ごはん",
+                "confidence": 0.99909,
+                "included": true
+              },
+              {
+                "text": "[ B ]",
+                "rawText": "[ B ]",
+                "confidence": 0.89343,
+                "included": true
+              },
+              {
+                "text": "パン",
+                "rawText": "パン",
+                "confidence": 0.99346,
+                "included": true
+              },
+              {
+                "text": "ジャム・マーガリン",
+                "rawText": "ジャム・マーガリン",
+                "confidence": 0.99965,
+                "included": true
+              },
+              {
+                "text": "[ 共通料理 ]",
+                "rawText": "[ 共通料理 ]",
+                "confidence": 0.96251,
+                "included": true
+              },
+              {
+                "text": "炒り豆腐",
+                "rawText": "炒り豆腐",
+                "confidence": 0.99929,
+                "included": true
+              },
+              {
+                "text": "ミニオムレツ",
+                "rawText": "ミニオムレツ",
+                "confidence": 0.99878,
+                "included": true
+              },
+              {
+                "text": "野菜サラダ",
+                "rawText": "野菜サラダ",
+                "confidence": 0.99981,
+                "included": true
+              },
+              {
+                "text": "味噌汁",
+                "rawText": "味噌汁",
+                "confidence": 0.98008,
+                "included": true
+              },
+              {
+                "text": "牛乳(200ml)",
+                "rawText": "牛乳（200ml）",
+                "confidence": 0.91357,
+                "included": true
+              }
+            ],
+            "issues": []
+          },
+          "lunch": {
+            "rawText": "わかめラーメン\nごはん\nかぼちゃ挽肉フライ\nオレンジ",
+            "text": "わかめラーメン\nごはん\nかぼちゃ挽肉フライ\nオレンジ",
+            "warnings": [],
+            "lines": [
+              {
+                "text": "わかめラーメン",
+                "rawText": "わかめラーメン",
+                "confidence": 0.99852,
+                "included": true
+              },
+              {
+                "text": "ごはん",
+                "rawText": "ごはん",
+                "confidence": 0.99936,
+                "included": true
+              },
+              {
+                "text": "かぼちゃ挽肉フライ",
+                "rawText": "かぼちゃ挽肉フライ",
+                "confidence": 0.99789,
+                "included": true
+              },
+              {
+                "text": "オレンジ",
+                "rawText": "オレンジ",
+                "confidence": 0.99978,
+                "included": true
+              }
+            ],
+            "issues": []
+          },
+          "dinner": {
+            "rawText": "ごはん\n水餃子の塩ちゃんこスープ\n梅おかか和え\n納豆",
+            "text": "ごはん\n水餃子の塩ちゃんこスープ\n梅おかか和え\n納豆",
+            "warnings": [],
+            "lines": [
+              {
+                "text": "ごはん",
+                "rawText": "ごはん",
+                "confidence": 0.99673,
+                "included": true
+              },
+              {
+                "text": "水餃子の塩ちゃんこスープ",
+                "rawText": "水餃子の塩ちゃんこスープ",
+                "confidence": 0.99126,
+                "included": true
+              },
+              {
+                "text": "梅おかか和え",
+                "rawText": "梅おかか和え",
+                "confidence": 0.9998,
+                "included": true
+              },
+              {
+                "text": "納豆",
+                "rawText": "納豆",
+                "confidence": 0.99825,
+                "included": true
+              }
+            ],
+            "issues": []
+          }
+        },
+        {
+          "date": "2026-10-31",
+          "breakfast": {
+            "rawText": "[ A ]\nごはん\n[ B ]\nパン\nジャム・マーガリン\n[ 共通料理 ]\nさつま芋のきんぴら\nベーコン串\n野菜サラダ\n味噌汁\n牛乳（200ml）",
+            "text": "[ A ]\nごはん\n[ B ]\nパン\nジャム・マーガリン\n[ 共通料理 ]\nさつま芋のきんぴら\nベーコン串\n野菜サラダ\n味噌汁\n牛乳(200ml)",
+            "warnings": [],
+            "lines": [
+              {
+                "text": "[ A ]",
+                "rawText": "[ A ]",
+                "confidence": 0.90767,
+                "included": true
+              },
+              {
+                "text": "ごはん",
+                "rawText": "ごはん",
+                "confidence": 0.999,
+                "included": true
+              },
+              {
+                "text": "[ B ]",
+                "rawText": "[ B ]",
+                "confidence": 0.9667,
+                "included": true
+              },
+              {
+                "text": "パン",
+                "rawText": "パン",
+                "confidence": 0.99687,
+                "included": true
+              },
+              {
+                "text": "ジャム・マーガリン",
+                "rawText": "ジャム・マーガリン",
+                "confidence": 0.9996,
+                "included": true
+              },
+              {
+                "text": "[ 共通料理 ]",
+                "rawText": "[ 共通料理 ]",
+                "confidence": 0.95109,
+                "included": true
+              },
+              {
+                "text": "さつま芋のきんぴら",
+                "rawText": "さつま芋のきんぴら",
+                "confidence": 0.99917,
+                "included": true
+              },
+              {
+                "text": "ベーコン串",
+                "rawText": "ベーコン串",
+                "confidence": 0.99754,
+                "included": true
+              },
+              {
+                "text": "野菜サラダ",
+                "rawText": "野菜サラダ",
+                "confidence": 0.99983,
+                "included": true
+              },
+              {
+                "text": "味噌汁",
+                "rawText": "味噌汁",
+                "confidence": 0.99163,
+                "included": true
+              },
+              {
+                "text": "牛乳(200ml)",
+                "rawText": "牛乳（200ml）",
+                "confidence": 0.90253,
+                "included": true
+              }
+            ],
+            "issues": []
+          },
+          "lunch": {
+            "rawText": "牛丼\n小松菜のポン酢和え\n味噌汁",
+            "text": "牛丼\n小松菜のポン酢和え\n味噌汁",
+            "warnings": [],
+            "lines": [
+              {
+                "text": "牛丼",
+                "rawText": "牛丼",
+                "confidence": 0.99496,
+                "included": true
+              },
+              {
+                "text": "小松菜のポン酢和え",
+                "rawText": "小松菜のポン酢和え",
+                "confidence": 0.99963,
+                "included": true
+              },
+              {
+                "text": "味噌汁",
+                "rawText": "味噌汁",
+                "confidence": 0.98914,
+                "included": true
+              }
+            ],
+            "issues": []
+          },
+          "dinner": {
+            "rawText": "ごはん\n鶏肉のトマト煮\nツナサラダ\n鶏の梅じそフライ",
+            "text": "ごはん\n鶏肉のトマト煮\nツナサラダ\n鶏の梅じそフライ",
+            "warnings": [],
+            "lines": [
+              {
+                "text": "ごはん",
+                "rawText": "ごはん",
+                "confidence": 0.99912,
+                "included": true
+              },
+              {
+                "text": "鶏肉のトマト煮",
+                "rawText": "鶏肉のトマト煮",
+                "confidence": 0.99794,
+                "included": true
+              },
+              {
+                "text": "ツナサラダ",
+                "rawText": "ツナサラダ",
+                "confidence": 0.99975,
+                "included": true
+              },
+              {
+                "text": "鶏の梅じそフライ",
+                "rawText": "鶏の梅じそフライ",
+                "confidence": 0.99941,
+                "included": true
+              }
+            ],
+            "issues": []
+          }
+        },
+        {
+          "date": "2026-11-01",
+          "breakfast": {
+            "rawText": "[ A ]\nごはん\n[ B ]\nパン\nジャム・マーガリン\n[ 共通料理 ]\nナポリタン\nハムエッグ\n野菜サラダ\nクリームスープ\n牛乳（200ml）",
+            "text": "[ A ]\nごはん\n[ B ]\nパン\nジャム・マーガリン\n[ 共通料理 ]\nナポリタン\nハムエッグ\n野菜サラダ\nクリームスープ\n牛乳(200ml)",
+            "warnings": [],
+            "lines": [
+              {
+                "text": "[ A ]",
+                "rawText": "[ A ]",
+                "confidence": 0.9226,
+                "included": true
+              },
+              {
+                "text": "ごはん",
+                "rawText": "ごはん",
+                "confidence": 0.99922,
+                "included": true
+              },
+              {
+                "text": "[ B ]",
+                "rawText": "[ B ]",
+                "confidence": 0.94849,
+                "included": true
+              },
+              {
+                "text": "パン",
+                "rawText": "パン",
+                "confidence": 0.99712,
+                "included": true
+              },
+              {
+                "text": "ジャム・マーガリン",
+                "rawText": "ジャム・マーガリン",
+                "confidence": 0.99976,
+                "included": true
+              },
+              {
+                "text": "[ 共通料理 ]",
+                "rawText": "[ 共通料理 ]",
+                "confidence": 0.99606,
+                "included": true
+              },
+              {
+                "text": "ナポリタン",
+                "rawText": "ナポリタン",
+                "confidence": 0.99956,
+                "included": true
+              },
+              {
+                "text": "ハムエッグ",
+                "rawText": "ハムエッグ",
+                "confidence": 0.99944,
+                "included": true
+              },
+              {
+                "text": "野菜サラダ",
+                "rawText": "野菜サラダ",
+                "confidence": 0.99983,
+                "included": true
+              },
+              {
+                "text": "クリームスープ",
+                "rawText": "クリームスープ",
+                "confidence": 0.99934,
+                "included": true
+              },
+              {
+                "text": "牛乳(200ml)",
+                "rawText": "牛乳（200ml）",
+                "confidence": 0.92145,
+                "included": true
+              }
+            ],
+            "issues": []
+          },
+          "lunch": {
+            "rawText": "ごはん\nイカマヨオーロラ炒め\nいんげんのごま和え\n清汁",
+            "text": "ごはん\nイカマヨオーロラ炒め\nいんげんのごま和え\n清汁",
+            "warnings": [],
+            "lines": [
+              {
+                "text": "ごはん",
+                "rawText": "ごはん",
+                "confidence": 0.99917,
+                "included": true
+              },
+              {
+                "text": "イカマヨオーロラ炒め",
+                "rawText": "イカマヨオーロラ炒め",
+                "confidence": 0.99911,
+                "included": true
+              },
+              {
+                "text": "いんげんのごま和え",
+                "rawText": "いんげんのごま和え",
+                "confidence": 0.99491,
+                "included": true
+              },
+              {
+                "text": "清汁",
+                "rawText": "清汁",
+                "confidence": 0.99994,
+                "included": true
+              }
+            ],
+            "issues": []
+          },
+          "dinner": {
+            "rawText": "ごはん\n肉団子の照り焼き炒め\nオクラの中華サラダ\n中華スープ",
+            "text": "ごはん\n肉団子の照り焼き炒め\nオクラの中華サラダ\n中華スープ",
+            "warnings": [],
+            "lines": [
+              {
+                "text": "ごはん",
+                "rawText": "ごはん",
+                "confidence": 0.99924,
+                "included": true
+              },
+              {
+                "text": "肉団子の照り焼き炒め",
+                "rawText": "肉団子の照り焼き炒め",
+                "confidence": 0.99977,
+                "included": true
+              },
+              {
+                "text": "オクラの中華サラダ",
+                "rawText": "オクラの中華サラダ",
+                "confidence": 0.99985,
+                "included": true
+              },
+              {
+                "text": "中華スープ",
+                "rawText": "中華スープ",
+                "confidence": 0.99934,
+                "included": true
+              }
+            ],
+            "issues": []
+          }
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "schemaVersion": 1,
+      "engine": "PP-OCRv6-medium",
       "sourceSha256": "72e53f1defc1802b32e0dd56b1ec40a1a538dad6ca98163f7c17873e8d4cadaa",
       "fetchedAt": "2026-10-17T12:15:07.295Z",
       "startDate": "2026-10-19",
@@ -8264,7 +9304,7 @@
     }
   ],
   "sourceUrl": "https://www.kagawa-nct.ac.jp/dormitoryE/kondate.pdf",
-  "publishedForDate": "2026-10-22",
+  "publishedForDate": "2026-10-23",
   "current": {
     "startDate": "2026-10-19",
     "endDate": "2026-10-25",
@@ -8272,5 +9312,11 @@
     "pdf": "archive/2026/0008_2026-08-17_2026-08-23.pdf",
     "json": "archive/2026/0008_2026-08-17_2026-08-23.json"
   },
-  "upcoming": null
+  "upcoming": {
+    "startDate": "2026-10-26",
+    "endDate": "2026-11-01",
+    "sourceSha256": "cf037e23edaa8cd13724c75373464a10cd8b0a73afb527c5194d88b0e151b14d",
+    "pdf": "archive/2026/0009_2026-10-26_2026-11-01.pdf",
+    "json": "archive/2026/0009_2026-10-26_2026-11-01.json"
+  }
 }
