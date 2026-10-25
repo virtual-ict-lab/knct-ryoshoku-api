@@ -9304,19 +9304,13 @@
     }
   ],
   "sourceUrl": "https://www.kagawa-nct.ac.jp/dormitoryE/kondate.pdf",
-  "publishedForDate": "2026-10-25",
+  "publishedForDate": "2026-10-26",
   "current": {
-    "startDate": "2026-10-19",
-    "endDate": "2026-10-25",
-    "sourceSha256": "72e53f1defc1802b32e0dd56b1ec40a1a538dad6ca98163f7c17873e8d4cadaa",
-    "pdf": "archive/2026/0008_2026-08-17_2026-08-23.pdf",
-    "json": "archive/2026/0008_2026-08-17_2026-08-23.json"
-  },
-  "upcoming": {
     "startDate": "2026-10-26",
     "endDate": "2026-11-01",
     "sourceSha256": "cf037e23edaa8cd13724c75373464a10cd8b0a73afb527c5194d88b0e151b14d",
     "pdf": "archive/2026/0009_2026-10-26_2026-11-01.pdf",
     "json": "archive/2026/0009_2026-10-26_2026-11-01.json"
-  }
+  },
+  "upcoming": null
 }
