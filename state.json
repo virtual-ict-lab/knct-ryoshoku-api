@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "source_url": "https://www.kagawa-nct.ac.jp/dormitoryE/kondate.pdf",
-  "latest_pdf_hash": "c702a81df0b0244965b1e6099bab576027a91e1547c634456f6df0f172d7d9e8",
+  "latest_pdf_hash": "6f0594f52cbcb718b82b303c3ef5580495212b66e6461fe4f29c97bd48d5089d",
   "menus": [
     {
       "seq": 1,
@@ -98,10 +98,18 @@
       "path": "archive/2026/0012_2026-11-23_2026-11-29.pdf",
       "sha256": "c702a81df0b0244965b1e6099bab576027a91e1547c634456f6df0f172d7d9e8",
       "preferred": true
+    },
+    {
+      "seq": 13,
+      "start_date": "2026-11-30",
+      "end_date": "2026-12-06",
+      "path": "archive/2026/0013_2026-11-30_2026-12-06.pdf",
+      "sha256": "6f0594f52cbcb718b82b303c3ef5580495212b66e6461fe4f29c97bd48d5089d",
+      "preferred": true
     }
   ],
-  "updated_at": "2026-11-24T15:55:16.773Z",
+  "updated_at": "2026-11-28T00:33:53.480Z",
   "latest_pdf_path": "latest.pdf",
-  "latest_week_start": "2026-11-23",
-  "latest_week_end": "2026-11-29"
+  "latest_week_start": "2026-11-30",
+  "latest_week_end": "2026-12-06"
 }
